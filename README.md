@@ -17,4 +17,7 @@ json1 = File.new('spec/fixtures/twitter-search.json', 'r')
 json2 = File.new('spec/fixtures/twitter-search2.json', 'r')
 old, new = Yajl::Parser.parse(json1), Yajl::Parser.parse(json2)
 result = JsonCompare.get_diff(old, new)
+
+exclusion = ["from_user", "to_user_id"]
+result = JsonCompare.get_dirr(old, new, excludion)
 ```
